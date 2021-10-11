@@ -20,6 +20,53 @@ let pm3Btn = $("#pm3Btn");
 let pm4Btn = $("#pm4Btn");
 let pm5Btn = $("#pm5Btn");
 
+$(desc9).text(localStorage.getItem("9am"));
+$(desc10).text(localStorage.getItem("10am"));
+$(desc11).text(localStorage.getItem("11am"));
+$(desc12).text(localStorage.getItem("12pm"));
+$(desc13).text(localStorage.getItem("1pm"));
+$(desc14).text(localStorage.getItem("2pm"));
+$(desc15).text(localStorage.getItem("3pm"));
+$(desc16).text(localStorage.getItem("4pm"));
+$(desc17).text(localStorage.getItem("5pm"));
+
+if (desc9.textContent == undefined) {
+    $(desc9).text("Enter a task");
+}
+
+if (desc10.textContent == undefined) {
+    $(desc10).text("Enter a task");
+}
+
+if (desc11.textContent == undefined) {
+    $(desc11).text("Enter a task");
+}
+
+if (desc12.textContent == undefined) {
+    $(desc12).text("Enter a task");
+}
+
+if (desc13.textContent == undefined) {
+    $(desc13).text("Enter a task");
+}
+
+if (desc14.textContent == undefined) {
+    $(desc14).text("Enter a task");
+}
+
+if (desc15.textContent == undefined) {
+    $(desc15).text("Enter a task");
+}
+
+if (desc16.textContent == undefined) {
+    $(desc16).text("Enter a task");
+}
+
+if (desc17.textContent == undefined) {
+    $(desc17).text("Enter a task");
+}
+
+
 
 
 let clock = function () {
