@@ -34,39 +34,40 @@ $(desc17).text(localStorage.getItem("5pm"));
 
 
 // if local storage is empty, value of task descriptions are Enter a task
-if (desc9.textContent == undefined) {
+if (localStorage.getItem("9am") === null) {
     $(desc9).text("Enter a task");
+
 }
 
-if (desc10.textContent == undefined) {
+if (localStorage.getItem("10am") === null) {
     $(desc10).text("Enter a task");
 }
 
-if (desc11.textContent == undefined) {
+if (localStorage.getItem("11am") === null) {
     $(desc11).text("Enter a task");
 }
 
-if (desc12.textContent == undefined) {
+if (localStorage.getItem("12pm") === null) {
     $(desc12).text("Enter a task");
 }
 
-if (desc13.textContent == undefined) {
+if (localStorage.getItem("1pm") === null) {
     $(desc13).text("Enter a task");
 }
 
-if (desc14.textContent == undefined) {
+if (localStorage.getItem("2pm") === null) {
     $(desc14).text("Enter a task");
 }
 
-if (desc15.textContent == undefined) {
+if (localStorage.getItem("3pm") === null) {
     $(desc15).text("Enter a task");
 }
 
-if (desc16.textContent == undefined) {
+if (localStorage.getItem("4pm") === null) {
     $(desc16).text("Enter a task");
 }
 
-if (desc17.textContent == undefined) {
+if (localStorage.getItem("5pm") === null) {
     $(desc17).text("Enter a task");
 }
 
