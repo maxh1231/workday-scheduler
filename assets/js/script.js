@@ -34,49 +34,44 @@ $(desc17).text(localStorage.getItem("5pm"));
 
 
 // if local storage is empty, value of task descriptions are Enter a task
-if (localStorage.getItem("9am") === null) {
+if (localStorage.getItem("9am") === null || localStorage.getItem("9am") === "") {
     $(desc9).text("Enter a task");
-
 }
 
-if (localStorage.getItem("10am") === null) {
+if (localStorage.getItem("10am") === null || localStorage.getItem("10am") === "") {
     $(desc10).text("Enter a task");
 }
 
-if (localStorage.getItem("11am") === null) {
+if (localStorage.getItem("11am") === null || localStorage.getItem("11am") === "") {
     $(desc11).text("Enter a task");
 }
 
-if (localStorage.getItem("12pm") === null) {
+if (localStorage.getItem("12pm") === null || localStorage.getItem("12pm") === "") {
     $(desc12).text("Enter a task");
 }
 
-if (localStorage.getItem("1pm") === null) {
+if (localStorage.getItem("1pm") === null || localStorage.getItem("1pm") === "") {
     $(desc13).text("Enter a task");
 }
 
-if (localStorage.getItem("2pm") === null) {
+if (localStorage.getItem("2pm") === null || localStorage.getItem("2pm") === "") {
     $(desc14).text("Enter a task");
 }
 
-if (localStorage.getItem("3pm") === null) {
+if (localStorage.getItem("3pm") === null || localStorage.getItem("3pm") === "") {
     $(desc15).text("Enter a task");
 }
 
-if (localStorage.getItem("4pm") === null) {
+if (localStorage.getItem("4pm") === null || localStorage.getItem("4pm") === "") {
     $(desc16).text("Enter a task");
 }
 
-if (localStorage.getItem("5pm") === null) {
+if (localStorage.getItem("5pm") === null || localStorage.getItem("5pm") === "") {
     $(desc17).text("Enter a task");
 }
 
-// color coding based on current time
 
-
-
-
-
+// Current date/time digital clock in header
 let clock = function () {
     setInterval(clock, 1000);
 
@@ -92,8 +87,7 @@ let clock = function () {
 clock();
 
 
-
-
+// Update colors on task wrappers based on current hour of the day
 let updateColorCode = function () {
     setInterval(updateColorCode, 60000);
     let currentTime = moment().format("H");
@@ -205,50 +199,50 @@ updateColorCode();
 // replace <p> with <textarea> on click
 $(desc9).click(function () {
     $(desc9).replaceWith("<textarea id='9amInput'></textarea>");
-
+    $("#9amInput").focus();
 })
 
 $(desc10).click(function () {
     $(desc10).replaceWith("<textarea id='10amInput'></textarea>");
-
+    $("#10amInput").focus();
 })
 
 $(desc11).click(function () {
     $(desc11).replaceWith("<textarea id='11amInput'></textarea>");
-
+    $("#11amInput").focus();
 })
 
 $(desc12).click(function () {
     $(desc12).replaceWith("<textarea id='12pmInput'></textarea>");
-
+    $("#12pmInput").focus();
 })
 
 $(desc13).click(function () {
     $(desc13).replaceWith("<textarea id='1pmInput'></textarea>");
-
+    $("#1pmInput").focus();
 })
 
 $(desc14).click(function () {
     $(desc14).replaceWith("<textarea id='2pmInput'></textarea>");
-
+    $("#2pmInput").focus();
 })
 
 $(desc15).click(function () {
     $(desc15).replaceWith("<textarea id='3pmInput'></textarea>");
-
+    $("#3pmInput").focus();
 })
 
 $(desc16).click(function () {
     $(desc16).replaceWith("<textarea id='4pmInput'></textarea>");
-
+    $("#4pmInput").focus();
 })
 
 $(desc17).click(function () {
     $(desc17).replaceWith("<textarea id='5pmInput'></textarea>");
-
+    $("#5pmInput").focus();
 })
 
-//store <textarea> values in local storage on button click
+// store <textarea> values in local storage on button click
 $(am9Btn).click(function () {
     localStorage.setItem("9am", $("#9amInput").val());
 })

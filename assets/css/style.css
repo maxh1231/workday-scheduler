@@ -15,6 +15,10 @@ textarea{
   height: 100%;
 }
 
+div p {
+  color: black;
+}
+
 
 .jumbotron {
   text-align: center;
