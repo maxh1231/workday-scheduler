@@ -20,6 +20,8 @@ let pm3Btn = $("#pm3Btn");
 let pm4Btn = $("#pm4Btn");
 let pm5Btn = $("#pm5Btn");
 
+
+// set value of tasks descriptions to local storage
 $(desc9).text(localStorage.getItem("9am"));
 $(desc10).text(localStorage.getItem("10am"));
 $(desc11).text(localStorage.getItem("11am"));
@@ -30,6 +32,8 @@ $(desc15).text(localStorage.getItem("3pm"));
 $(desc16).text(localStorage.getItem("4pm"));
 $(desc17).text(localStorage.getItem("5pm"));
 
+
+// if local storage is empty, value of task descriptions are Enter a task
 if (desc9.textContent == undefined) {
     $(desc9).text("Enter a task");
 }
@@ -66,6 +70,9 @@ if (desc17.textContent == undefined) {
     $(desc17).text("Enter a task");
 }
 
+// color coding based on current time
+
+
 
 
 
@@ -74,12 +81,124 @@ let clock = function () {
 
 
     let currentDay = moment().format("dddd MMM DD YYYY, h:mm:ss");
-
     $("#currentDay").text(currentDay);
+
+
+
 
 }
 
 clock();
+
+
+
+
+let updateColorCode = function () {
+    setInterval(updateColorCode, 60000);
+    let currentTime = moment().format("H");
+    currentTime = parseInt(currentTime, 10);
+
+
+    // 9am Checker
+    if (currentTime < 9) {
+        $("#am9Wrapper").addClass("future");
+
+    } else if (currentTime === 9) {
+        $("#am9Wrapper").addClass("present");
+    } else if (currentTime > 9) {
+        $("#am9Wrapper").addClass("past");
+    }
+
+
+    // 10am Checker
+    if (currentTime < 10) {
+        $("#am10Wrapper").addClass("future");
+
+    } else if (currentTime === 10) {
+        $("#am10Wrapper").addClass("present");
+    } else {
+        $("#am10Wrapper").addClass("past");
+    }
+
+
+    // 11am Checker
+    if (currentTime < 11) {
+        $("#am11Wrapper").addClass("future");
+
+    } else if (currentTime === 11) {
+        $("#am11Wrapper").addClass("present");
+    } else {
+        $("#am11Wrapper").addClass("past");
+    }
+
+
+    // 12pm checker
+    if (currentTime < 12) {
+        $("#pm12Wrapper").addClass("future");
+
+    } else if (currentTime === 12) {
+        $("#pm12Wrapper").addClass("present");
+    } else {
+        $("#pm12Wrapper").addClass("past");
+    }
+
+
+    // 1pm Checker
+    if (currentTime < 13) {
+        $("#pm1Wrapper").addClass("future");
+
+    } else if (currentTime === 13) {
+        $("#pm1Wrapper").addClass("present");
+    } else {
+        $("#pm1Wrapper").addClass("past");
+    }
+
+
+    // 2pm Checker
+    if (currentTime < 14) {
+        $("#pm2Wrapper").addClass("future");
+
+    } else if (currentTime === 14) {
+        $("#pm2Wrapper").addClass("present");
+    } else {
+        $("#pm2Wrapper").addClass("past");
+    }
+
+
+    // 3pm Checker
+    if (currentTime < 15) {
+        $("#pm3Wrapper").addClass("future");
+
+    } else if (currentTime === 15) {
+        $("#pm3Wrapper").addClass("present");
+    } else {
+        $("#pm3Wrapper").addClass("past");
+    }
+
+
+    // 4pm Checker
+    if (currentTime < 16) {
+        $("#pm4Wrapper").addClass("future");
+
+    } else if (currentTime === 16) {
+        $("#pm4Wrapper").addClass("present");
+    } else {
+        $("#pm4Wrapper").addClass("past");
+    }
+
+
+    // 5pm Checker
+    if (currentTime < 17) {
+        $("#pm5Wrapper").addClass("future");
+
+    } else if (currentTime === 17) {
+        $("#pm5Wrapper").addClass("present");
+    } else {
+        $("#pm5Wrapper").addClass("past");
+    }
+}
+
+updateColorCode();
 
 
 // replace <p> with <textarea> on click
@@ -128,7 +247,7 @@ $(desc17).click(function () {
 
 })
 
-//store <textarea> values in local storage
+//store <textarea> values in local storage on button click
 $(am9Btn).click(function () {
     localStorage.setItem("9am", $("#9amInput").val());
 })
